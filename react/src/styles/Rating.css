@@ -1,0 +1,105 @@
+.rating-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rating-header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.points-display {
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.filters-section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.filters-section h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.filter-group {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-group label {
+  width: 100px;
+  font-size: 14px;
+  color: #666;
+}
+
+.filter-group select,
+.filter-group input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.photo-section {
+  text-align: center;
+}
+
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.photo {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.rate-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.rate-button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 16px;
+}
