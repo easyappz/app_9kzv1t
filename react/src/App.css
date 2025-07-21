@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5;
 }
 
 code {
@@ -13,46 +12,158 @@ code {
     monospace;
 }
 
-.app-container {
+.App {
+  text-align: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #1a1a1a;
+h1 {
+  color: #333;
+  margin-bottom: 30px;
 }
 
-.ant-card {
+h2 {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #555;
+  font-size: 1.1em;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.loading {
+  font-size: 1.2em;
+  color: #555;
+  margin: 40px 0;
+}
+
+.error {
+  font-size: 1.2em;
+  color: #d32f2f;
+  margin: 40px 0;
+}
+
+.notification {
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+.profile-container {
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  margin-bottom: 30px;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.ant-btn {
-  border-radius: 4px;
+.photos-section {
+  text-align: left;
 }
 
-.photo-grid {
+.photos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.photo-item {
-  text-align: center;
+.photo-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
-.photo-item img {
+.photo-card:hover {
+  transform: translateY(-5px);
+}
+
+.photo-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 8px;
 }
 
-.filter-container {
-  margin-bottom: 20px;
+.photo-info {
+  padding: 15px;
+}
+
+.stats-section {
+  margin-top: 15px;
+}
+
+.stats-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-section li {
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.photo-actions {
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.activate-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.activate-btn:hover {
+  background-color: #388e3c;
+}
+
+.deactivate-btn {
+  background-color: #f57c00;
+  color: white;
+}
+
+.deactivate-btn:hover {
+  background-color: #e64a19;
+}
+
+.delete-btn {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #b71c1c;
 }
