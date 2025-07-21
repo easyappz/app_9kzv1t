@@ -225,6 +225,31 @@ router.put('/photo/:id/toggle-active', authenticateToken, async (req, res) => {
   }
 });
 
+// Delete Photo Endpoint
+router.delete('/photo/:id', authenticateToken, async (req, res) => {
+  try {
+    const photo = await Photo.findOne({ _id: req.params.id, userId: req.user.id });
+    if (!photo) {
+      return res.status(404).json({ error: 'Photo not found or not owned by user' });
+    }
+
+    const user = await User.findById(req.user.id);
+    if (photo.isActive && user.points < 1) {
+      return res.status(400).json({ error: 'Not enough points to delete an active photo' });
+    }
+
+    if (photo.isActive) {
+      user.points -= 1;
+      await user.save();
+    }
+
+    await Photo.deleteOne({ _id: req.params.id });
+    res.json({ message: 'Photo deleted', photoId: req.params.id, points: user.points });
+  } catch (error) {
+    res.status(500).json({ error: 'Photo deletion failed', details: error.message });
+  }
+});
+
 // Get Photos for Evaluation (with Filters)
 router.get('/photos-for-evaluation', authenticateToken, async (req, res) => {
   try {
